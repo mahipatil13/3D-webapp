@@ -1,0 +1,46 @@
+# MOSAIC 3D Expense Tracker - Progress & Build Log
+
+## Project Objective
+Build MOSAIC — an ultra-premium, dark futuristic 3D expense tracking web app matching the reference design (image.png) and PRD.md.
+Follow "Ponytail" rules (no over-engineering, YAGNI, lean architecture, direct Three.js canvas without heavy wrapper bloat, clean modular structure, zero generic vibe-coded templates).
+
+---
+
+## Current Architecture Plan
+- **Framework**: Vite + React + TypeScript (fast, lightweight, highly responsive)
+- **Styling**: Tailored Modern CSS / Glassmorphism Design System matching reference image (deep navy `#080c14`, translucent glass cards, neon teal/mint `#00f5a0` & `#05d59e`, electric orange `#ff7b25`, cobalt `#2563eb`, vivid category accents).
+- **3D Visualization**: Direct Three.js with Raycasting (interactive floating category spheres/shapes: Orange sphere for Food, Blue cube for Transport, Green sphere for Shopping, Yellow/Lime ring/torus for Bills, Purple sphere for Other, orbit rings, lighting, particle dust, interactive tooltips/clicks).
+- **Charts**: Custom ultra-crisp interactive SVG charts (Donut category breakdown with center readout & 6-month dual-bar + trendline chart) avoiding heavy chart library quirks and perfectly matching the visual design.
+- **State & Storage**: Reactive local store with localStorage persistence, initial seed data matching the mockup (`₹12,450` spent, `₹20,000` budget, categories, October 2026 transactions).
+- **Views & Modals**:
+  - Main Dashboard (Overview): Top greeting, 4 Stat Cards with live sparklines & progress, 3D Orbit, Donut Breakdown, Spending Trend, Recent Transactions.
+  - Add Expense Modal: Clean modal with amount, description, category, date, payment method, validation.
+  - Transactions View: Full searchable, filterable transaction table with edit/delete.
+  - Budgets View: Adjust monthly budget, breakdown by category target.
+  - Category Filter: Clicking any 3D category or chart item filters dashboard & transactions.
+
+---
+
+## Roadmap & Milestones
+- [x] Phase 1: Setup project structure (Vite + React + TypeScript + Three.js + Lucide)
+- [x] Phase 2: Design system & global styles (Futuristic dark glass theme, neon glows, custom scrollbars, typography)
+- [x] Phase 3: Core data model & store (Expenses, Categories, Monthly Budgets, LocalStorage persistence)
+- [x] Phase 4: Main Dashboard layout matching image.png:
+  - Sidebar (Logo, navigation links, quote, user profile)
+  - Header (Greetings, subtitle, month picker, Add Expense CTA)
+  - 4 KPI summary cards (Total spent, Budget progress, Remaining, Transactions count)
+  - 3D Spending Orbit canvas with interactive meshes & category labels
+  - Category Donut chart & legend
+  - Spending Trend (6-month bar + line chart)
+  - Recent Transactions table with category badges & action menus
+- [x] Phase 5: Add Expense Modal (reactive form, validations, instant UI update)
+- [x] Phase 6: Sub-views (Transactions Manager, Budget Editor, Settings)
+- [x] Phase 7: Interactive wiring (3D selection syncs with charts and tables, month switching, filter resets)
+- [x] Phase 8: Verification & polishing (Responsive layout, performance check, Vite production build verified)
+
+---
+
+## Work Log
+- 2026-10-14: Scaffolding, architecture design system, and full component implementation completed.
+- Verified TypeScript compilation (`tsc && vite build`) passes with zero errors.
+- Dev server running at `http://localhost:3000/`. Dashboard, 3D Canvas, SVG Donut, Bar & Trendline charts, Modals, and sub-views active.
